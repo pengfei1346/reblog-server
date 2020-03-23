@@ -4,7 +4,8 @@ mongoose.set('useCreateIndex',true)
 mongoose.set('useFindAndModify',false)
 
 console.log(process.env.NODE_ENV)
-const connectAddress = process.env.NODE_ENV == 'development' ? 'mongodb://localhost:27017/myBlog' : 'mongodb://cpf:1@116.62.145.106:27017/myBlog';
+// const connectAddress = process.env.NODE_ENV == 'development' ? 'mongodb://localhost:27017/myBlog' : 'mongodb:62.234.90.11:27017/myBlog';
+const connectAddress = 'mongodb://localhost:27017/myBlog';
 mongoose.connect(
     connectAddress,
     {   useNewUrlParser: true,
