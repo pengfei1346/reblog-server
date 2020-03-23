@@ -8,9 +8,11 @@ const categories = require('./categories')
 const upload = require('./upload')
 const article = require('./article')
 
-router.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../views/index.html'));
-})
+router.get('/', function(req, res, next) {
+    res.sendFile(path.resolve(__dirname,'../pages/index.html'));
+});
+
+
 router.get('/demo', (req, res) => {
     res.json({
         text: "测试",
