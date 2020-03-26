@@ -9,7 +9,7 @@ const upload = require('./upload')
 const article = require('./article')
 
 router.get('/', function(req, res, next) {
-    res.sendFile(path.resolve(__dirname,'../pages/index.html'));
+    res.sendFile(path.resolve(__dirname,'../public/index.html'));
 });
 
 
