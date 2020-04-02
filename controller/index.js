@@ -2,7 +2,7 @@ const {Router} = require("express")
 const router = Router()
 const path = require('path')
 
-const region = require('./region')
+const register = require('./register')
 const login = require('./login')
 const categories = require('./categories')
 const upload = require('./upload')
@@ -19,7 +19,7 @@ router.get('/demo', (req, res) => {
         data: "测试数据"
     })
 })
-router.use(region);
+router.use(register);
 router.use(login);
 router.use(categories);
 router.use(upload);
