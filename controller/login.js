@@ -3,9 +3,9 @@ const router = Router();
 const user = require('../database/model/user')
 
 router.post('/login', (req, res) => {
-    let {email, password} = req.body;
-    console.log(email);
-    user.findOne({email}).then((data) => {
+    let {username, password} = req.body;
+    
+    user.findOne({username}).then((data) => {
 
         if (!data) {
             res.json({
@@ -38,7 +38,7 @@ router.post('/login', (req, res) => {
     })
 })
 
-router.delete('/logOut', (req, res) => {
+router.delete('/logout', (req, res) => {
     req.session.destroy(function (err) {
         if(err){
             console.log(err)

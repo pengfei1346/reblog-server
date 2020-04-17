@@ -23,6 +23,6 @@ router.use(register);
 router.use(login);
 router.use(categories);
 router.use(upload);
-router.use('/article', article);
+router.use(article);
 
 module.exports = router;
