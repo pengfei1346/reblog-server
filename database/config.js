@@ -7,7 +7,7 @@ mongoose.set('useFindAndModify', false)
 // const connectAddress = process.env.NODE_ENV == 'development' ? 'mongodb://localhost:27017/note' : 'mongodb://dyyao:yjr1923521@116.62.145.106:27017/note';
 // const connectAddress = process.env.NODE_ENV == 'development' ? 'mongodb://localhost:27017/myBlog' : 'mongodb:62.234.90.11:27017/myBlog';
 // const connectAddress = 'mongodb://localhost:27017/myBlog';
-const connectAddress = 'mongodb://admin:123456@62.234.90.11:27017/my_blog?authSource=admin';
+const connectAddress = 'mongodb://admin:123456@127.0.0.1:27017/my_blog?authSource=admin';
 mongoose.connect(
   connectAddress,
   {
