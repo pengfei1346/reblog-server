@@ -12,6 +12,9 @@ router.get('/', function(req, res, next) {
     res.sendFile(path.resolve(__dirname,'../public/index.html'));
 });
 
+router.get('/admin', function(req, res, next) {
+    res.sendFile(path.resolve(__dirname,'../admin/index.html'));
+});
 
 router.get('/demo', (req, res) => {
     res.json({
