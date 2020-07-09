@@ -8,7 +8,7 @@ const categories = require('./categories')
 const upload = require('./upload')
 const article = require('./article')
 
-router.get('/', function(req, res, next) {
+router.get('/client', function(req, res, next) {
     res.sendFile(path.resolve(__dirname,'../public/index.html'));
 });
 

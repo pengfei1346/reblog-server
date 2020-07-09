@@ -24,8 +24,8 @@ app.use(bodyParser.json({limit: '4mb'}));
 app.use(bodyParser.urlencoded({ limit: '4mb',extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'admin')));
 app.use(express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'admin')));
 
 app.use(session({
     name: 'ssid',  // sessionID的名字
