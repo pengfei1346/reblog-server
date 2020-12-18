@@ -55,8 +55,7 @@ app.use(session({
     saveUninitialized: false,  //保存初始化
     cookie: {
       secure: false,
-      expires: 1000*60*60*24*7, // 7day
-      httpOnly: false, // 是否只读
+      expires: 1000*60*60*24*7 // 7day
     }, //是否是https协议
     store: new MongoStore({ mongooseConnection: dbConnect })
 }))
