@@ -53,7 +53,11 @@ app.use(session({
     secret: 'cpf_secret', // 签名密钥
     resave: false, //是否重新保存session
     saveUninitialized: false,  //保存初始化
-    cookie: { secure: false,expires: 1000*60*60*24*14 }, //是否是https协议
+    cookie: {
+      secure: false,
+      expires: 1000*60*60*24*7, // 7day
+      httpOnly: false, // 是否只读
+    }, //是否是https协议
     store: new MongoStore({ mongooseConnection: dbConnect })
 }))
 
