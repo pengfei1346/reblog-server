@@ -17,7 +17,7 @@ module.exports = {
             "uploads"
         ],
         "exec_mode": "cluster_mode",                // 应用启动模式，支持fork和cluster模式
-        "instances": 4,                             // 应用启动实例个数，仅在cluster模式有效 默认为fork；或者 max
+        "instances": 2,                             // 应用启动实例个数，仅在cluster模式有效 默认为fork；或者 max
         "max_memory_restart": 8,                    // 最大内存限制数，超出自动重启
         "error_file": "./logs/app-err.log",         // 错误日志文件
         "out_file": "./logs/app-out.log",           // 正常日志文件
