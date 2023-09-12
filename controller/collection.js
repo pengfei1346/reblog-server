@@ -6,6 +6,36 @@ function isMobile(mobile) {
     return /^1[3456789]\d{9}$/.test(mobile); // 2017年底10批电信网码号申请199  198  166
 }
 
+router.get('/collection/list', function (req, res) {
+    let {pn = 1, size = 10} = req.query;
+    collection.countDocuments({},(err,count) => {
+        collection.aggregate(
+            [
+                {
+                    $sort: {
+                        _id: -1
+                    }
+                },
+                {
+                    $skip: (pn - 1) * Number(size)
+                },
+                {
+                    $limit: Number(size)
+                },
+            ]
+        ).then(data => {
+            res.json({
+                code: 200,
+                data,
+                total: count,
+                msg: "获取成功"
+            })
+        }).catch(err => {
+            console.error('Error:' + err);
+        })
+    })
+});
+
 router.post('/collection/add', function (req, res) {
     let {username, mobile, content} = req.body;
 
