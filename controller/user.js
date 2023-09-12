@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var collection = require("../database/model/collection")
-var isMobilePhone = require('validator/lib/isMobilePhone')
+function isMobile(mobile) {
+    // return /^1[34578]\d{9}$/.test(this);
+    return /^1[3456789]\d{9}$/.test(mobile); // 2017年底10批电信网码号申请199  198  166
+}
 
 router.post('/collection/add', function (req, res) {
     let {username, mobile, content} = req.body;
@@ -13,7 +16,7 @@ router.post('/collection/add', function (req, res) {
                 msg: "手机号已存在！",
             })
         } else {
-            if (!isMobilePhone(mobile)) {
+            if (!isMobile(mobile)) {
                 res.json({
                     code: 402,
                     msg: "请输入正确的手机号！",
