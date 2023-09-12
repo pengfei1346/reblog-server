@@ -8,6 +8,7 @@ const login = require('./login')
 const categories = require('./categories')
 const upload = require('./upload')
 const article = require('./article')
+const collection = require('./collection')
 var multiparty = require('multiparty');
 
 router.get('/client', function(req, res, next) {
@@ -134,5 +135,6 @@ router.use(login);
 router.use(categories);
 router.use(upload);
 router.use(article);
+router.use(collection);
 
 module.exports = router;
