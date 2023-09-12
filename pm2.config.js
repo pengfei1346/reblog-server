@@ -26,19 +26,23 @@ module.exports = {
         "max_restarts": 30,                         // 最大异常重启次数，即小于min_uptime运行时间重启次数；
         "autorestart": true,                        // 默认为true, 发生异常的情况下自动重启
         env: {
-            NODE_ENV: "development",
-            PORT: 3300
-        },
-        env_test: {
-            NODE_ENV: "test",
-        },
-        env_staging: {
-            NODE_ENV: "staging",
-        },
-        env_production: {
             NODE_ENV: "production",
             PORT: 3300
-        }
+        },
+        // env: {
+        //     NODE_ENV: "development",
+        //     PORT: 3300
+        // },
+        // env_test: {
+        //     NODE_ENV: "test",
+        // },
+        // env_staging: {
+        //     NODE_ENV: "staging",
+        // },
+        // env_production: {
+        //     NODE_ENV: "production",
+        //     PORT: 3300
+        // }
     }
 
 }
