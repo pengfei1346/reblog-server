@@ -8,7 +8,7 @@ function isMobile(mobile) {
 
 router.post('/collection/add', function (req, res) {
     let {username, mobile, content} = req.body;
-    console.log(username,email, password)
+
     collection.findOne({mobile}).then(data => {
         if (data) {
             res.json({
